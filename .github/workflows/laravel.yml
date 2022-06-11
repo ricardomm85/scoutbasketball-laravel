@@ -33,5 +33,7 @@ jobs:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
       run: vendor/bin/phpunit
+    - name: Upgrade Chrome Driver
+      run: php artisan dusk:chrome-driver
     - name: Execute Dusk tests
       run: php artisan dusk
