@@ -27,7 +27,6 @@ class UpdateFibaAgents extends Command
      */
     public function handle()
     {
-
         $this->info('Crawling Fiba agents website...');
 
         return Command::SUCCESS;

@@ -52,7 +52,7 @@
             "./vendor/bin/php-cs-fixer fix -vvv --dry-run --show-progress=dots"
        ],
        "sniff-ci": [
-           "./vendor/bin/php-cs-fixer fix --dry-run"
+           "./vendor/bin/php-cs-fixer fix -vvv --dry-run"
         ],
        "lint": [
            "./vendor/bin/php-cs-fixer fix -vvv --show-progress=dots"
