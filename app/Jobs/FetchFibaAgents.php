@@ -29,7 +29,7 @@ final class FetchFibaAgents implements ShouldQueue
         $fibaAgentsUrls = $this->getFibaAgentsUrls($html);
 
         foreach ($fibaAgentsUrls as $fibaAgentUrl) {
-            NewFibaAgentUrl::dispatch($fibaAgentUrl);
+            NewFibaAgentUrl::dispatch(strval($fibaAgentUrl));
         }
 
         NewFibaAgentListAvailable::dispatch($fibaAgentsUrls->all());
@@ -40,7 +40,7 @@ final class FetchFibaAgents implements ShouldQueue
         $token = $this->getToken($html);
         $agentsIds = $this->getFibaAgentsIds($html);
 
-        return $agentsIds->map(fn ($id) => $this->buildAgentUrl($id, $token));
+        return $agentsIds->map(fn (string $id) => $this->buildAgentUrl($id, $token));
     }
 
     private function getToken(string $html): string
